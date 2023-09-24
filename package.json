@@ -1,0 +1,25 @@
+{
+  "source": [
+    "private/js/app.js",
+    "private/styles/main.css"
+  ],
+  "targets": {
+    "default": {
+      "distDir": "./public"
+    }
+  },
+  "scripts": {
+    "watch": "parcel watch",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.15",
+    "parcel": "^2.8.3",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "parcel": "^2.9.3"
+  }
+  
+}
