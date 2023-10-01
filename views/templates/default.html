@@ -3,13 +3,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% if page.title %}{{ page.title }}{% endif %} | {{ settings['site_name'] }}
-    </title>
+    <title>{% if page.title %}{{ page.title }}{% endif %} | {{ settings['site_name'] }}</title>
 
-    
+    {# custom font #}
+    <link href="https://fonts.bunny.net/css?family=manrope:400,500,700" rel="stylesheet" />
+
     {{ asset('styles/main.css') | stylesheet_tag }}
 </head>
-<body>
+<body class="font-manrope">
     {% block body %}{% endblock %}
 
     {# alpine js #}
