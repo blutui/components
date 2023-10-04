@@ -1,49 +1,56 @@
 {% set menu = cms.menu('menu') %}
 
-<header class="relative text-sm bg-white text-slate-900 p-5">
+<header class="relative text-sm font-semibold bg-white text-slate-900 p-5">
     <nav class="mx-auto container flex items-center justify-between" x-data="{showMenu : false}" >
         
-        {# logo #}
-        <a href="/">
-            <span class="text-2xl font-semibold">Logo</span>
-        </a>
+        <div class="flex justify-center">
+            {# logo #}
+            <a href="/">
+                <span class="text-2xl">Logo</span>
+            </a>
 
-        {# desktop menu nav #}
-        <ul class="px-5 sm:flex items-center hidden">
-            {% for item in menu.items %}
-                {% if item.active == true %}
-                    <li class="relative" {% if item.items != null and item.items != '' %} x-data="{ open: false }" {% endif %}>
-                        <a class="flex items-center justify-center px-5 hover:text-zinc-600" href="{{ item.href }}" {% if item.opens_new_tab == true %} target="_blank"{% endif %}{% if item.items != null and item.items != '' %} @click="open = true" x-bind:aria-expanded="open" {% endif %}>
-                            
-                            {{ item.label }}
-                             
-                            {# add caret if menu has submenu items  #}
-                            {% if item.items != null and item.items != '' %}         
-                                <svg class="w-[10px] ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
-                            {% endif %}
-                        </a>
-
-                        {# drop down submenu items #}
-                        {% if item.items != null and item.items != '' %}
-                            <ul class="bg-white flex flex-col p-3 absolute top-[160%] left-0 right-0 border border-slate-200 w-max m-auto min-w-[100px] text-center" x-show.transition="open" @click.away="open = false">
-                                {% for subitem in item.items %}
-                                    {% if subitem.active == true %}
-                                        <li {% if loop.last == false  %}class="pb-2"{% endif%}>
-                                            <a class="hover:text-zinc-600" href="{{ subitem.href }}" {% if subitem.opens_new_tab == true %} target="_blank"{% endif %}>
-                                                {{ subitem.label }}
-                                            </a>
-                                        </li>
+            {# desktop menu nav #}
+                <ul class="px-5 sm:flex items-center hidden">
+                    {% for item in menu.items %}
+                        {% if item.active == true %}
+                            <li class="relative" {% if item.items != null and item.items != '' %} x-data="{ open: false }" {% endif %}>
+                                <a class="flex items-center justify-center px-5 hover:text-zinc-600" href="{{ item.href }}" {% if item.opens_new_tab == true %} target="_blank"{% endif %}{% if item.items != null and item.items != '' %} @click="open = true" x-bind:aria-expanded="open" {% endif %}>
+                                    
+                                    {{ item.label }}
+                                    
+                                    {# add caret if menu has submenu items  #}
+                                    {% if item.items != null and item.items != '' %}         
+                                        <svg class="w-[10px] ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
                                     {% endif %}
-                                {% endfor %}
-                            </ul>
+                                </a>
+
+                                {# drop down submenu items #}
+                                {% if item.items != null and item.items != '' %}
+                                    <ul class="bg-white flex flex-col p-3 absolute top-[160%] left-0 right-0 border border-slate-200 w-max m-auto min-w-[100px] text-center" x-show.transition="open" @click.away="open = false">
+                                        {% for subitem in item.items %}
+                                            {% if subitem.active == true %}
+                                                <li {% if loop.last == false  %}class="pb-2"{% endif%}>
+                                                    <a class="hover:text-zinc-600" href="{{ subitem.href }}" {% if subitem.opens_new_tab == true %} target="_blank"{% endif %}>
+                                                        {{ subitem.label }}
+                                                    </a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </li>
                         {% endif %}
-                    </li>
-                {% endif %}
-            {% endfor %}
-        </ul>
+                    {% endfor %}
+                </ul>
 
+        </div>
+        
 
-        <a href="#" class="sm:inline-block bg-zinc-900 px-6 py-2 font-semibold text-white hover:bg-zinc-600 hidden">Button</a>
+        
+        <div class="sm:flex items-center hidden gap-2">
+            <a href="#" class="inline-block bg-zinc-900 px-6 py-2 font-semibold text-white hover:bg-zinc-600">Button 1</a>
+            <a href="#" class="inline-block bg-white border border-black px-6 py-2 font-semibold hover:bg-zinc-200">Button 2</a>    
+        </div>
 
 
         {# mobile menu #}
@@ -89,6 +96,10 @@
                         </li>
                     {% endif %}
                 {% endfor %}
+
+                <li>
+                    <a href="#" class="inline-block bg-white border-black px-6 py-2 font-semibold hover:bg-zinc-200 mt-5">Button</a>
+                </li>
 
                 <li>
                     <a href="#" class="inline-block bg-zinc-900 px-6 py-2 font-semibold text-white hover:bg-zinc-600 mt-5">Button</a>
