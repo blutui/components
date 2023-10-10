@@ -1,0 +1,20 @@
+<div class="min-h-screen md:flex bg-gradient-to-br from-zinc-900 to-zinc-700">
+    <div class="flex lg:basis-3/5 md:text-left text-center items-center justify-center">
+        <div class="sm:p-20 px-10 py-20 text-white">
+            {{ cms_heading('hero-heading') }}
+            <div class="text-xl my-10">
+                {{ cms_text('hero-content') }}
+            </div>
+
+            
+            {# newsletter #}
+            <div class="flex-initial md:mt-0 mt-5">
+                <p><strong>Subscribe:</strong></p>
+                <div class="mb-6 flex md:mb-0">
+                    <input type="text" class="block w-full border border-zinc-600 p-[7px]" id="exampleFormControlInput2" placeholder="Enter your email" />
+                    <button type="submit" class="inline-block bg-zinc-900 px-6 py-2 font-semibold text-white hover:bg-zinc-600">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
