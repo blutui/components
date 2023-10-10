@@ -1,6 +1,6 @@
 {% set menu = cms.menu('menu') %}
 
-<header class="relative text-sm font-semibold bg-white text-slate-900 p-5">
+<header class="relative text-sm font-semibold bg-white text-zinc-900 p-5">
     <nav class="mx-auto container flex flex-row items-center" x-data="{showMenu : false}" >
 
         {# desktop menu nav #}
@@ -21,7 +21,7 @@
 
                             {# drop down submenu items #}
                             {% if item.items != null and item.items != '' %}
-                                <ul class="bg-white flex flex-col p-3 absolute top-[160%] left-0 right-0 border border-slate-200 w-max m-auto min-w-[100px] text-center" x-show.transition="open" @click.away="open = false">
+                                <ul class="bg-white flex flex-col p-3 absolute top-[160%] left-0 right-0 border border-zinc-200 w-max m-auto min-w-[100px] text-center" x-show.transition="open" @click.away="open = false">
                                     {% for subitem in item.items %}
                                         {% if subitem.active == true %}
                                             <li {% if loop.last == false  %}class="pb-2"{% endif%}>
