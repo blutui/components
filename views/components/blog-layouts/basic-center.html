@@ -1,0 +1,40 @@
+{# this blog page is created using blutui blogs #}
+{% set blog = cms.blog('blog') %}
+
+
+<div class="container mx-auto my-32 sm:px-10 px-5">
+    <div class="mb-20 text-center">
+        <h1>{{blog.name}}</h1>
+
+        <div class="text-zinc-500 text-xl mb-6">
+                {{ cms_text('blog-content') }}
+        </div> 
+    </div>
+
+    
+    <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:gap-8 gap-2">
+        {# blog posts - sort by newest #}
+
+        {% for entry in blog.posts|sort_by('publish_date', true) %}
+            <a class="block" href="{{entry.slug}}">
+                {% if entry.cover_image == null %}
+                    <div class="h-60 w-full bg-gradient-to-br from-zinc-900 to-zinc-700 mb-3"></div>
+                {% else %}
+                    <div class="h-60 w-full bg-center bg-no-repeat bg-cover mb-3" style="background-image:url({{ entry.cover_image }})"></div>
+                {% endif %}
+
+                <div class="pb-3">
+                    <p class="text-lg font-semibold">{{ entry.title }}</p>
+                    <p class="text-xs">{{ entry.description }}</p>
+                </div>
+
+                <div class="flex align-center justify-between text-zinc-500">
+                    <p class="text-xs">{{ entry.author }}</p>
+                    <p class="text-xs">{{ entry.publish_date|date('d M Y') }}</p>
+                </div>
+                
+            </a>
+        {% endfor %}
+    </div>
+    
+</div>
