@@ -1,0 +1,22 @@
+<div class="w-full h-3/4 bg-gradient-to-br from-zinc-900 to-zinc-700"> </div>
+
+<div class="lg:flex sm:p-20 px-10 py-20">
+    <div class="lg:basis-1/2">
+        {{ cms_heading('hero-heading') }}
+    </div>
+
+    <div class="lg:basis-1/2 flex flex-wrap gap-3">
+        <div class="text-zinc-500 text-xl mb-5">
+            {{ cms_text('hero-content-sm') }}
+        </div>
+
+        {# newsletter #}
+        <div class="w-full">
+            <p><strong>Subscribe:</strong></p>
+            <div class="mb-6 flex md:mb-0">
+                <input type="text" class="block w-full border border-zinc-600 p-[7px]" id="exampleFormControlInput2" placeholder="Enter your email" />
+                <button type="submit" class="inline-block bg-zinc-900 px-6 py-2 font-semibold text-white hover:bg-zinc-600">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
