@@ -1,0 +1,21 @@
+{# this faq list is created using blutui collections #}
+{% set collection = cms.collection('faq') %}
+
+
+<div class="container mx-auto my-32 sm:px-10 px-5">
+    <div class="mb-20">
+        {{ cms_heading('faq-heading') }}
+
+        <div class="text-zinc-500 text-xl mb-6">
+                {{ cms_text('faq-content') }}
+        </div> 
+    </div>
+
+    {# faq list #}
+    {% for entry in collection %}
+        <div class="mb-10">
+            <p class="text-lg font-semibold mb-5">{{ entry.question }}</p>
+            {{ entry.answer | raw }}    
+        </div>
+    {% endfor %}       
+</div>

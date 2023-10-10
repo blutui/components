@@ -1,0 +1,35 @@
+{# this faq list is created using blutui collections #}
+{% set collection = cms.collection('faq') %}
+
+
+<div class="container mx-auto my-32 sm:px-10 px-5">
+    <div class="mb-20 text-center">
+        {{ cms_heading('faq-heading') }}
+
+        <div class="text-zinc-500 text-xl mb-6">
+                {{ cms_text('faq-content') }}
+        </div> 
+    </div>
+
+
+    <div class="flex flex-row">
+        <div class="lg:basis-4/6 mx-auto border border-zinc-200">
+
+            {# faq accordion #}
+            {% for entry in collection %}
+                <div class="border-b border-zinc-200" x-data="{ reportsOpen: false }">
+                    <div @click="reportsOpen = !reportsOpen" class="flex items-center justify-between w-full p-5 mx-auto hover:cursor-pointer">
+                        <span class="text-lg font-semibold">{{ entry.question }}</span>
+
+                        {# caret #}
+                        <svg class="w-[20px] ml-10 transform transition duration-300 ease-in-out" :class="{'rotate-180': reportsOpen,' -translate-y-0.0': !reportsOpen }" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+                    </div>
+
+                    <div class="flex p-5 w-full transform transition duration-300 ease-in-out" x-cloak x-show="reportsOpen" x-collapse x-collapse.duration.500ms >
+                        {{ entry.answer | raw }}                
+                    </div>
+                </div> 
+            {% endfor %}       
+        </div>
+    </div>
+</div>
