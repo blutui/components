@@ -1,0 +1,35 @@
+{# this faq list is created using blutui collections #}
+{% set left = cms.collection('faq') %}
+{% set right = cms.collection('faq_right') %}
+
+
+<div class="container mx-auto my-32 sm:px-10 px-5">
+    <div class="mb-20">
+        {{ cms_heading('faq-heading') }}
+
+        <div class="text-zinc-500 text-xl mb-6">
+                {{ cms_text('faq-content') }}
+        </div> 
+    </div>
+
+    {# faq list #}
+    <div class="md:flex md:flex-row md:gap-10">
+        <div class="sm:basis-1/2">
+            {% for entry in left %}
+                <div class="mb-10">
+                    <p class="text-lg font-semibold mb-5">{{ entry.question }}</p>
+                    {{ entry.answer | raw }}    
+                </div>
+            {% endfor %}  
+        </div>
+
+        <div class="md:basis-1/2">
+            {% for entry in right %}
+                <div class="mb-10">
+                    <p class="text-lg font-semibold mb-5">{{ entry.question }}</p>
+                    {{ entry.answer | raw }}    
+                </div>
+            {% endfor %}  
+        </div>
+    </div>
+</div>
