@@ -1,53 +1,46 @@
 {% set menu = cms.menu('menu') %}
 
-<header class="relative text-sm bg-white text-slate-900 p-5">
-    <nav class="mx-auto container flex items-center justify-between" x-data="{showMenu : false}" >
-        
-        {# logo #}
-        <a href="/">
-            <span class="text-2xl font-semibold">Logo</span>
-        </a>
+<header class="relative text-sm font-semibold bg-white text-slate-900 p-5">
+    <nav class="mx-auto container flex flex-row items-center" x-data="{showMenu : false}" >
 
         {# desktop menu nav #}
-        <ul class="px-5 sm:flex items-center hidden">
-            {% for item in menu.items %}
-                {% if item.active == true %}
-                    <li class="relative" {% if item.items != null and item.items != '' %} x-data="{ open: false }" {% endif %}>
-                        <a class="flex items-center justify-center px-5 hover:text-zinc-600" href="{{ item.href }}" {% if item.opens_new_tab == true %} target="_blank"{% endif %}{% if item.items != null and item.items != '' %} @click="open = true" x-bind:aria-expanded="open" {% endif %}>
-                            
-                            {{ item.label }}
-                             
-                            {# add caret if menu has submenu items  #}
-                            {% if item.items != null and item.items != '' %}         
-                                <svg class="w-[10px] ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+        <div class="sm:basis-1/3">
+            <ul class="sm:flex items-center hidden">
+                {% for item in menu.items %}
+                    {% if item.active == true %}
+                        <li class="relative" {% if item.items != null and item.items != '' %} x-data="{ open: false }" {% endif %}>
+                            <a class="flex items-center justify-center pr-5 hover:text-zinc-600" href="{{ item.href }}" {% if item.opens_new_tab == true %} target="_blank"{% endif %}{% if item.items != null and item.items != '' %} @click="open = true" x-bind:aria-expanded="open" {% endif %}>
+                                
+                                {{ item.label }}
+                                
+                                {# add caret if menu has submenu items  #}
+                                {% if item.items != null and item.items != '' %}         
+                                    <svg class="w-[10px] ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+                                {% endif %}
+                            </a>
+
+                            {# drop down submenu items #}
+                            {% if item.items != null and item.items != '' %}
+                                <ul class="bg-white flex flex-col p-3 absolute top-[160%] left-0 right-0 border border-slate-200 w-max m-auto min-w-[100px] text-center" x-show.transition="open" @click.away="open = false">
+                                    {% for subitem in item.items %}
+                                        {% if subitem.active == true %}
+                                            <li {% if loop.last == false  %}class="pb-2"{% endif%}>
+                                                <a class="hover:text-zinc-600" href="{{ subitem.href }}" {% if subitem.opens_new_tab == true %} target="_blank"{% endif %}>
+                                                    {{ subitem.label }}
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
                             {% endif %}
-                        </a>
-
-                        {# drop down submenu items #}
-                        {% if item.items != null and item.items != '' %}
-                            <ul class="bg-white flex flex-col p-3 absolute top-[160%] left-0 right-0 border border-slate-200 w-max m-auto min-w-[100px] text-center" x-show.transition="open" @click.away="open = false">
-                                {% for subitem in item.items %}
-                                    {% if subitem.active == true %}
-                                        <li {% if loop.last == false  %}class="pb-2"{% endif%}>
-                                            <a class="hover:text-zinc-600" href="{{ subitem.href }}" {% if subitem.opens_new_tab == true %} target="_blank"{% endif %}>
-                                                {{ subitem.label }}
-                                            </a>
-                                        </li>
-                                    {% endif %}
-                                {% endfor %}
-                            </ul>
-                        {% endif %}
-                    </li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-
-
-        <a href="#" class="sm:inline-block bg-zinc-900 px-6 py-2 font-semibold text-white hover:bg-zinc-600 hidden">Button</a>
-
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
 
         {# mobile menu #}
-        <div class="sm:hidden">
+        <div class="sm:hidden basis-1/3 flex justify-start items-center">
 
             {# mobile menu toggle #}
             <div x-data="{ open: false }" x-on:click="open = !open">
@@ -89,11 +82,19 @@
                         </li>
                     {% endif %}
                 {% endfor %}
-
-                <li>
-                    <a href="#" class="inline-block bg-zinc-900 px-6 py-2 font-semibold text-white hover:bg-zinc-600 mt-5">Button</a>
-                </li>
             </ul>
+        </div>
+
+
+        <div class="basis-1/3 flex justify-center">
+            {# logo #}
+            <a href="/">
+                <span class="text-2xl">Logo</span>
+            </a>
+        </div>
+
+        <div class="basis-1/3 flex justify-end">
+            <a href="#" class="inline-block bg-zinc-900 px-6 py-2 font-semibold text-white hover:bg-zinc-600">Button</a>
         </div>
     </nav>
 </header>
