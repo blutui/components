@@ -1,0 +1,65 @@
+{% extends 'templates/default' %}
+
+{% block body %}
+
+
+<div class="bg-zinc-200">
+    <div class="container mx-auto py-20 sm:px-10 px-5">
+        <div class="flex flex-row">
+            <div class="lg:basis-4/6">
+                <a href="/" class="flex items-center text-zinc-600 font-bold"> 
+                    <svg class="h-3 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+                    Blutui Components
+                </a>
+                
+                <h1>Navbar Components</h1>
+                <p>A navbar is usually found at the top of the page and provides links to navigate the website.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mx-auto my-32 sm:px-10 px-5">
+    <div class="my-20">
+        <h4 class="mb-10">Basic Navigation</h4>
+        <div class="border border-zinc-600 overflow-hidden h-80">
+            {% include 'components/navbars/basic.html' %}
+        </div>
+    </div>
+
+    <div class="my-20">
+        <h4 class="mb-10">Left Aligned Navigation</h4>
+        <div class="border border-zinc-600 overflow-hidden h-80">
+            {% include 'components/navbars/basic-left.html' %}
+        </div>
+    </div>
+
+    <div class="my-20">
+        <h4 class="mb-10">Centered Aligned Navigation</h4>
+        <div class="border border-zinc-600 overflow-hidden h-80">
+            {% include 'components/navbars/basic-centered.html' %}
+        </div>
+    </div>
+
+    <div class="my-20">
+        <h4 class="mb-10">Right Aligned Navigation</h4>
+        <div class="border border-zinc-600 overflow-hidden h-80">
+            {% include 'components/navbars/basic-right.html' %}
+        </div>
+    </div>
+
+    <div class="my-20">
+        <h4 class="mb-10">Sidebar Navigation</h4>
+        <div class="border border-zinc-600 overflow-hidden h-screen">
+            {% include 'components/navbars/sidebar.html' %}
+        </div>
+    </div>
+    
+
+</div>
+
+    
+
+
+{% endblock %}

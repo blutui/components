@@ -2,6 +2,221 @@
 
 {% block body %}
 
-{% include 'components/blog-layouts/cards-center.html' %}
+
+<div class="bg-zinc-200">
+    <div class="container mx-auto py-20 sm:px-10 px-5">
+        <div class="flex flex-row">
+            <div class="lg:basis-4/6">
+                <h1>Blutui Components</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mx-auto my-32 sm:px-10 px-5">
+
+    <div class="grid grid-cols-2 gap-x-20">
+        {# heading components #}
+
+        <div class="py-10 border-b border-zinc-200">
+            <div class="md:flex align-center">
+                <div class="md:basis-1/2">
+                    <h4 class="flex items-center hover:text-zinc-600 hover:fill-zinc-600">
+                        <a href="/headings">Heading Components</a>
+                    </h4>
+                </div>
+
+                <div class="md:basis-1/2 flex items-center justify-end">
+                    <a href="/headings" class="flex items-center hover:text-zinc-600 hover:fill-zinc-600">
+                        <p class="font-bold">View All</p>
+                        <svg class="h-5 ml-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            {# <div class="grid sm:grid-cols-4 grid-cols-2 lg:gap-5 gap-2">
+                <div class="border border-zinc-200">
+                    <img class="w-full" src="https://cdn.blutui.com/uploads/components/Component-Screenshots/heading--1.jpg" alt="" >
+                </div>
+
+                <div class="border border-zinc-200">
+                    <img class="w-full" src="https://cdn.blutui.com/uploads/components/Component-Screenshots/heading-2.jpg" alt="" >
+                </div>
+
+                <div class="border border-zinc-200">
+                    <img class="w-full" src="https://cdn.blutui.com/uploads/components/Component-Screenshots/heading-3.jpg" alt="" >
+                </div>
+            </div> #}
+        </div>
+
+
+        {# navbar components #}
+
+        <div class="py-10 border-b border-zinc-200">
+            <div class="md:flex align-center">
+                <div class="md:basis-1/2">
+                    <h4 class="flex items-center hover:text-zinc-600 hover:fill-zinc-600">
+                        <a href="/navbars">Navbar Components</a>
+                    </h4>
+                </div>
+
+                <div class="md:basis-1/2 flex items-center justify-end">
+                    <a href="/navbars" class="flex items-center hover:text-zinc-600 hover:fill-zinc-600">
+                        <p class="font-bold">View All</p>
+                        <svg class="h-5 ml-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        {# footer components #}
+
+        <div class="py-10 border-b border-zinc-200">
+            <div class="md:flex align-center">
+                <div class="md:basis-1/2">
+                    <h4 class="flex items-center hover:text-zinc-600 hover:fill-zinc-600">
+                        <a href="/footers">Footer Components</a>
+                    </h4>
+                </div>
+
+                <div class="md:basis-1/2 flex items-center justify-end">
+                    <a href="/footers" class="flex items-center hover:text-zinc-600 hover:fill-zinc-600">
+                        <p class="font-bold">View All</p>
+                        <svg class="h-5 ml-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        {# hero sections components #}
+
+        <div class="py-10 border-b border-zinc-200">
+            <div class="md:flex align-center">
+                <div class="md:basis-1/2">
+                    <h4 class="flex items-center hover:text-zinc-600 hover:fill-zinc-600">
+                        <a href="/hero">Hero Sections</a>
+                    </h4>
+                </div>
+
+                <div class="md:basis-1/2 flex items-center justify-end">
+                    <a href="/hero" class="flex items-center hover:text-zinc-600 hover:fill-zinc-600">
+                        <p class="font-bold">View All</p>
+                        <svg class="h-5 ml-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        {# banner sections components #}
+
+        <div class="py-10 border-b border-zinc-200">
+            <div class="md:flex align-center">
+                <div class="md:basis-1/2">
+                    <h4 class="flex items-center hover:text-zinc-600 hover:fill-zinc-600">
+                        <a href="/banners">Banner Components</a>
+                    </h4>
+                </div>
+
+                <div class="md:basis-1/2 flex items-center justify-end">
+                    <a href="/banners" class="flex items-center hover:text-zinc-600 hover:fill-zinc-600">
+                        <p class="font-bold">View All</p>
+                        <svg class="h-5 ml-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        {# blog layouts components #}
+
+        <div class="py-10 border-b border-zinc-200">
+            <div class="md:flex align-center">
+                <div class="md:basis-1/2">
+                    <h4 class="flex items-center hover:text-zinc-600 hover:fill-zinc-600">
+                        <a href="/blogs">Blog Layout Components</a>
+                    </h4>
+                </div>
+
+                <div class="md:basis-1/2 flex items-center justify-end">
+                    <a href="/blogs" class="flex items-center hover:text-zinc-600 hover:fill-zinc-600">
+                        <p class="font-bold">View All</p>
+                        <svg class="h-5 ml-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        {# blog post components #}
+
+        <div class="py-10 border-b border-zinc-200">
+            <div class="md:flex align-center">
+                <div class="md:basis-1/2">
+                    <h4 class="flex items-center hover:text-zinc-600 hover:fill-zinc-600">
+                        <a href="/blog-post">Blog Post Components</a>
+                    </h4>
+                </div>
+
+                <div class="md:basis-1/2 flex items-center justify-end">
+                    <a href="/blog-post" class="flex items-center hover:text-zinc-600 hover:fill-zinc-600">
+                        <p class="font-bold">View All</p>
+                        <svg class="h-5 ml-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        {# gallery components #}
+
+        <div class="py-10 border-b border-zinc-200">
+            <div class="md:flex align-center">
+                <div class="md:basis-1/2">
+                    <h4 class="flex items-center hover:text-zinc-600 hover:fill-zinc-600">
+                        <a href="/gallery">Gallery Components</a>
+                    </h4>
+                </div>
+
+                <div class="md:basis-1/2 flex items-center justify-end">
+                    <a href="/gallery" class="flex items-center hover:text-zinc-600 hover:fill-zinc-600">
+                        <p class="font-bold">View All</p>
+                        <svg class="h-5 ml-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        {# FAQ components #}
+
+        <div class="py-10 border-b border-zinc-200">
+            <div class="md:flex align-center">
+                <div class="md:basis-1/2">
+                    <h4 class="flex items-center hover:text-zinc-600 hover:fill-zinc-600">
+                        <a href="/faq">FAQ Components</a>
+                    </h4>
+                </div>
+
+                <div class="md:basis-1/2 flex items-center justify-end">
+                    <a href="/faq" class="flex items-center hover:text-zinc-600 hover:fill-zinc-600">
+                        <p class="font-bold">View All</p>
+                        <svg class="h-5 ml-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+    
+
 
 {% endblock %}
+

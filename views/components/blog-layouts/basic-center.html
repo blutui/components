@@ -5,10 +5,6 @@
 <div class="container mx-auto my-32 sm:px-10 px-5">
     <div class="mb-20 text-center">
         <h1>{{blog.name}}</h1>
-
-        <div class="text-zinc-500 text-xl mb-6">
-                {{ cms_text('blog-content') }}
-        </div> 
     </div>
 
     
@@ -32,6 +28,8 @@
                     <p class="text-xs">{{ entry.author }}</p>
                     <p class="text-xs">{{ entry.publish_date|date('d M Y') }}</p>
                 </div>
+
+                <p class="text-xs font-bold mt-2">Read time: {{ entry.content | reading_time }}</p>
                 
             </a>
         {% endfor %}
