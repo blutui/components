@@ -1,7 +1,7 @@
-<div class="container mx-auto my-32 px-10">
+<div class="container mx-auto my-32 sm:px-10 px-5">
         <div class="flex flex-row">
                 <div class="lg:basis-4/6">
-                        <div class="text-blue-700 font-bold">
+                        <div class="text-zinc-500 font-bold">
                             {{ cms_text('basic-tagline') }}
                         </div>
 
@@ -11,11 +11,9 @@
                         </div> 
 
                         <div class="flex flex-wrap gap-3">
-                            {{ cms_button('basic-button-1') }} 
-                            {{ cms_button('basic-button-2') }} 
-                            {{ cms_button('basic-button-3') }} 
+                                {{ cms_button('basic-btn-1', { theme: 'inline-block bg-zinc-900 px-6 py-2 font-semibold text-white hover:bg-zinc-600', size: 'text-sm' }) }}          
+                                {{ cms_button('basic-btn-2', { theme: 'inline-block bg-white border border-zinc-900 px-6 py-2 font-semibold hover:bg-zinc-600', size: 'text-sm' }) }}          
                         </div>
-                                   
                 </div>
         </div>
 </div>
