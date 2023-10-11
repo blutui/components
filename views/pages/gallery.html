@@ -12,8 +12,8 @@
                     Blutui Components
                 </a>
                 
-                <h1>Blog Post Layouts</h1>
-                <p>Layouts for blog posts</p>
+                <h1>Gallery Components</h1>
+                <p>Galleries are used to display a collection of images or videos or other information.</p>
             </div>
         </div>
     </div>
@@ -22,23 +22,37 @@
 
 <div class="container mx-auto my-32 sm:px-10 px-5">
     <div class="my-20">
-        <h4 class="mb-10">Blog Post with a Block Banner</h4>
+        <h4 class="mb-10">1 Column Gallery</h4>
         <div class="border border-zinc-600 overflow-hidden">
-            {% include 'components/blog-posts/banner-block.html' %}
+            {% include 'components/gallery/columns-1.html' %}
         </div>
     </div>
 
     <div class="my-20">
-        <h4 class="mb-10">Blog Post with a Banner at the Top</h4>
+        <h4 class="mb-10">2 Columns Gallery</h4>
         <div class="border border-zinc-600 overflow-hidden">
-            {% include 'components/blog-posts/banner-top.html' %}
+            {% include 'components/gallery/columns-2.html' %}
         </div>
     </div>
 
     <div class="my-20">
-        <h4 class="mb-10">Blog Post with Banner at Bottom</h4>
+        <h4 class="mb-10">3 Columns Gallery</h4>
         <div class="border border-zinc-600 overflow-hidden">
-            {% include 'components/blog-posts/heading-top.html' %}
+            {% include 'components/gallery/columns-3.html' %}
+        </div>
+    </div>
+
+    <div class="my-20">
+        <h4 class="mb-10">4 Columns Gallery</h4>
+        <div class="border border-zinc-600 overflow-hidden">
+            {% include 'components/gallery/columns-4.html' %}
+        </div>
+    </div>
+
+    <div class="my-20">
+        <h4 class="mb-10">Masonry Gallery</h4>
+        <div class="border border-zinc-600 overflow-hidden">
+            {% include 'components/gallery/masonry.html' %}
         </div>
     </div>
 </div>

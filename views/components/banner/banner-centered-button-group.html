@@ -1,13 +1,17 @@
 <div class="w-full py-2 px-5 bg-zinc-200 text-sm relative" x-data="{ open: true }" x-transition x-show="open">
     <div class="container flex items-center justify-center mx-auto">
 
-        {# banner text #}
-        <p>Centered banner heading with a button group here</p>   
+        <div class="md:flex items-center justify-center text-center">
+            {# banner text #}
+            <div class="md:mb-0 mb-2">
+                <p>Centered banner heading with a button group here</p>   
+            </div>
         
-        {# button group#}
-        {{ cms_button('banner-btn-1', { theme: 'inline-block bg-zinc-900 px-4 py-2 font-semibold text-white hover:bg-zinc-600 ml-5', size: 'text-xs' }) }}          
-        {{ cms_button('banner-btn-2', { theme: 'inline-block bg-white border border-zinc-900 px-4 py-2 font-semibold text-zinc-900 hover:bg-zinc-100 ml-3', size: 'text-xs' }) }}          
-
+            {# button group#}
+            {{ cms_button('banner-btn-1', { theme: 'inline-block bg-zinc-900 px-4 py-2 font-semibold text-white hover:bg-zinc-600 md:ml-5', size: 'text-xs' }) }}          
+            {{ cms_button('banner-btn-2', { theme: 'inline-block bg-white border border-zinc-900 px-4 py-2 font-semibold text-zinc-900 hover:bg-zinc-100 ml-3', size: 'text-xs' }) }}          
+        </div>
+        
     
         {# close button hide banner on click #}
         <button class="absolute right-5 top-0 bottom-0" @click="open = ! open">

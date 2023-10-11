@@ -17,6 +17,7 @@
                 <div class="mt-10 text-zinc-500">
                     <p class="text-xs">Written by {{ post.author }}</p>
                     <p class="text-xs">Published on {{ post.publish_date|date('d M Y') }}</p>
+                    <p class="text-xs">Read time:{{ post.content | reading_time }}</p>
                 </div>
             </div>
         </div>

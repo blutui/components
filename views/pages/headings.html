@@ -12,8 +12,8 @@
                     Blutui Components
                 </a>
                 
-                <h1>Blog Post Layouts</h1>
-                <p>Layouts for blog posts</p>
+                <h1>Headings Components</h1>
+                <p>The header section provides an introduction to the content on the page.</p>
             </div>
         </div>
     </div>
@@ -22,25 +22,34 @@
 
 <div class="container mx-auto my-32 sm:px-10 px-5">
     <div class="my-20">
-        <h4 class="mb-10">Blog Post with a Block Banner</h4>
+        <h4 class="mb-10">Basic Header</h4>
         <div class="border border-zinc-600 overflow-hidden">
-            {% include 'components/blog-posts/banner-block.html' %}
+            {% include 'components/headings/basic.html' %}
         </div>
     </div>
 
     <div class="my-20">
-        <h4 class="mb-10">Blog Post with a Banner at the Top</h4>
+        <h4 class="mb-10">Basic Header with Tagline</h4>
         <div class="border border-zinc-600 overflow-hidden">
-            {% include 'components/blog-posts/banner-top.html' %}
+            {% include 'components/headings/basic-tagline.html' %}
         </div>
     </div>
 
     <div class="my-20">
-        <h4 class="mb-10">Blog Post with Banner at Bottom</h4>
+        <h4 class="mb-10">Basic Header with Button</h4>
         <div class="border border-zinc-600 overflow-hidden">
-            {% include 'components/blog-posts/heading-top.html' %}
+            {% include 'components/headings/basic-button.html' %}
         </div>
     </div>
+
+    <div class="my-20">
+        <h4 class="mb-10">Basic Header with Button Group</h4>
+        <div class="border border-zinc-600 overflow-hidden">
+            {% include 'components/headings/basic-button-group.html' %}
+        </div>
+    </div>
+    
+
 </div>
 
     
