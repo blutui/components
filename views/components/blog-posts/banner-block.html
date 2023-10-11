@@ -1,0 +1,36 @@
+{# this blog post page is created using blutui blogs #}
+{# add this code to your blog post layout file #}
+
+
+<div class="container mx-auto my-32 sm:px-10 px-5">
+
+    <div class="md:flex justify-between min-h-[50%] mb-10">
+        <div class="md:basis-2/5 flex flex-col justify-between sm:pr-10 sm:py-10">
+            <a href="{{ post.blog.uri }}" class="flex items-center text-sm mb-5 hover:underline"> 
+                <svg class="h-3 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+                Back to blog
+            </a>
+
+            <div>
+                <h1>{{ post.title }}</h1>
+
+                <div class="mt-10 text-zinc-500">
+                    <p class="text-xs">Written by {{ post.author }}</p>
+                    <p class="text-xs">Published on {{ post.publish_date|date('d M Y') }}</p>
+                </div>
+            </div>
+        </div>
+
+        {% if post.cover_image == null %}
+            <div class="md:basis-3/5 w-full bg-gradient-to-br from-zinc-900 to-zinc-700 md:h-auto h-96"></div>
+        {% else %}
+            <div class="md:basis-3/5 w-full bg-center bg-no-repeat bg-cover md:h-auto h-96" style="background-image:url({{ post.cover_image }})"></div>
+        {% endif %}
+    </div>
+
+
+    {# blog post content #}
+
+    {{ post.content|raw }}    
+
+</div>
